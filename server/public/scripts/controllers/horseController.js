@@ -20,7 +20,6 @@ myApp.controller('horseController', ['$scope', '$http', function ($scope, $http)
           $scope.animal = response.data.petfinder.pet;
           $scope.breed = $scope.animal.animal.$t;
           $scope.photo = $scope.animal.media.photos.photo[3].$t;
-          $scope.getBreeds();
         }
       );
     };

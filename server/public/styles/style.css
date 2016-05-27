@@ -30,13 +30,13 @@ footer-wrapper {
 .cat-left-fill {
   background: url(/images/catright.jpg);
   background-size: cover;
-  height: 700px;
+  height: 850px;
 }
 
 .horse-left-fill {
   background: url(/images/horseleft.jpg);
   background-size: cover;
-  height:700px;
+  height:850px;
 }
 
 .pets-photo {
