@@ -1,0 +1,14 @@
+<div class="container" ng-controller="sheltersController">
+  <div class="shelter-left-fill col-md-6">
+  </div>
+    <div class="col-md-6">
+        <h1>Looking for a nearby pet shelter?</h1>
+        <input type="text" ng-model="zip" placeholder="Enter zip code" />
+        <button ng-click="getShelters()">Find a Shelter</button>
+        <h2 ng-if="listings != undefined" >Shelters Near You:</h2>
+        <ul>
+          <li ng-repeat="listing in listings" >{{listing.name}}  {{listing.email}}  {{listing.phone}}</li>
+        </ul>
+      </div>
+  </div>
+</div>

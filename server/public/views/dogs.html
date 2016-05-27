@@ -1,0 +1,11 @@
+<div class="container" ng-controller="dogsController">
+  <h1 class="text-center">You NEED a Dog!</h1>
+  <div class=" dog-left-fill col-md-6">
+  </div>
+  <div class="col-md-6 text-center">
+    <h2>{{animal.name.$t}}</h2>
+    <img ng-src={{photo}}></img>
+    <p>{{animal.description.$t}}</p>
+    <h3><button ng-click="getRandomPet()">Find Another Dog</button></h3>
+  </div>
+</div>
