@@ -19,7 +19,7 @@ myApp.controller('catsController', ['$scope', '$http', function ($scope, $http) 
           console.log(response.data);
           $scope.animal = response.data.petfinder.pet;
           $scope.breed = $scope.animal.animal.$t;
-          $scope.photo = $scope.animal.media.photos.photo[0].$t;
+          $scope.photo = $scope.animal.media.photos.photo[3].$t;
           $scope.getBreeds();
         }
       );
@@ -27,21 +27,4 @@ myApp.controller('catsController', ['$scope', '$http', function ($scope, $http) 
 
     $scope.getRandomPet();
 
-    $scope.getBreeds = function () {
-      var query = 'breed.list';
-      query += '?key=' + key;
-      query += '&animal=' + $scope.breed.toLowerCase();
-      query += '&format=json';
-
-      var request = baseURL + encodeURI(query) + '&callback=JSON_CALLBACK';
-
-      console.log(request);
-
-      $http.jsonp(request).then(
-        function (response) {
-          console.log('breeds: ', response.data);
-          $scope.breeds = response.data.petfinder.breeds.breed;
-        }
-      );
-    };
   }]);
