@@ -1,6 +1,31 @@
 <div class="container" ng-controller="APIController">
   <h1 class="text-center">Welcome to Beautiful, Lonely Pets!</h1>
   <h2 class="text-center">Take your time, and find just the right pet for you.</h2>
-  <div class="pets-photo col-md-12 text-center">
-  </div>
+    <div class="col-md-12"
+      <section id="petfind">
+
+      <div class="col-md-6 text-center">
+        <h2>Find a Pet</h2>
+          <select ng-model="petType" ng-options="petType.type for petType in species">
+          <option value="">Select an Animal</option>
+          </select>
+          <div class="nav nav-pills nav-justified">
+            <a href="#{{petType.type}}">Go To Pets</a>
+          </div>
+
+        
+      </div>
+      <button class="favorite" ng-click="submitFavorite()">Favorite</button>
+      <span>Total Favorites: {{favoriteCount}}</span>
+      </section>
+    </div>
+    <div>
+      <ul id="favoritesList" ng-repeat="favorite in favorites">
+        <li>{{favorite.name}}</li>
+        <img ng-src={{favorite.image}}></img>
+        <p>{{favorite.description}}</p>
+      </ul>
+    </div>
+  <!-- <div class="pets-photo col-md-12 text-center">
+  </div> -->
 </div>
