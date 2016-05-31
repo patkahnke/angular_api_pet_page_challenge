@@ -26,6 +26,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
       templateUrl: '/views/shelters.html',
       controller: 'sheltersController',
     })
+    .when('/favoritesPage', {
+      templateUrl: '/views/favoritesPage.html',
+      controller: 'favoritesPageController',
+    })
     .otherwise({
       redirectTo: 'home',
     });
@@ -41,9 +45,10 @@ myApp.controller('APIController', ['$scope', '$http', function ($scope, $http) {
     $scope.zipcode = '';
     $scope.favoritesCount = 0;
     $scope.species = [
-      { type: 'horse', url: 'horse' },
-      { type: 'cat', url: 'cat' },
-      { type: 'dog', url: 'dog' },
+      { type: 'horse' },
+      { type: 'cat' },
+      { type: 'dog' },
+      { type: 'pig' },
     ];
 
     getFavorites();

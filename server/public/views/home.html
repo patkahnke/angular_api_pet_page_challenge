@@ -4,28 +4,20 @@
     <div class="col-md-12"
       <section id="petfind">
 
-      <div class="col-md-6 text-center">
-        <h2>Find a Pet</h2>
+      <table>
+        <tr>
+          <td>
           <select ng-model="petType" ng-options="petType.type for petType in species">
-          <option value="">Select an Animal</option>
-          </select>
-          <div class="nav nav-pills nav-justified">
-            <a href="#{{petType.type}}">Go To Pets</a>
-          </div>
-
-        
-      </div>
-      <button class="favorite" ng-click="submitFavorite()">Favorite</button>
-      <span>Total Favorites: {{favoriteCount}}</span>
-      </section>
+          <option value="">Select an Animal Type</option>
+        </select>
+      </td>
+      <td>
+          <div class="pet-type">
+            <a href="#{{petType.type}}">Find Your Next Pet</a>
+        </div>
+      </td>
+      </tr>
+    </table>
+    <div class="pets-photo col-md-10">
     </div>
-    <div>
-      <ul id="favoritesList" ng-repeat="favorite in favorites">
-        <li>{{favorite.name}}</li>
-        <img ng-src={{favorite.image}}></img>
-        <p>{{favorite.description}}</p>
-      </ul>
-    </div>
-  <!-- <div class="pets-photo col-md-12 text-center">
-  </div> -->
 </div>
