@@ -27,6 +27,25 @@ myApp.controller('horseController', ['$scope', '$http', function ($scope, $http)
       );
     };
 
+    $scope.submitFavorite = function () {
+      var data = favorite;
+      $http.post('/favorites', data)
+        .then(function () {
+          console.log('POST /favorites');
+          getFavorites();
+        });
+    };
+
+    function getFavorites() {
+      $http.get('/favorites')
+      .then(function (response) {
+        $scope.favorites = response.data;
+        $scope.favoriteCount = $scope.favorites.length;
+        console.log('GET /favorites ', response.data, $scope.favorites[0]);
+
+      });
+    }
+
     $scope.getRandomPet();
 
   },

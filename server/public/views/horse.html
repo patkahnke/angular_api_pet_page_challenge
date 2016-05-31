@@ -5,7 +5,7 @@
   <div class="col-md-6 text-center">
     <button class="favorite" ng-click="submitFavorite()">Mark as Favorite</button>
     <h2>{{animal.name.$t}}</h2>
-    <img ng-if="photo" ng-src={{photo}}></img>
+    <img class="favImage" ng-if="photo" ng-src={{photo}}></img>
     <p>{{animal.description.$t}}</p>
     <h3><button ng-click="getRandomPet()">Find Another Horse</button><h3>
   </div>
