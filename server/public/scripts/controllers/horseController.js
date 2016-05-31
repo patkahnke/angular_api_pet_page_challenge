@@ -1,6 +1,7 @@
 myApp.controller('horseController', ['$scope', '$http', function ($scope, $http) {
     var key = '92fe96ed8057563857e54705108f9735';
     var baseURL = 'http://api.petfinder.com/';
+    var favorite = {};
 
     $scope.getRandomPet = function () {
       var query = 'pet.getRandom';
@@ -19,9 +20,11 @@ myApp.controller('horseController', ['$scope', '$http', function ($scope, $http)
           $scope.animal = response.data.petfinder.pet;
           $scope.photo = $scope.animal.media.photos.photo[3].$t;
           favorite = {
+            petFinderId: response.data.petfinder.pet.id.$t,
             name: response.data.petfinder.pet.name.$t,
-            description: response.data.petfinder.pet.description.$t,
+            description: response.data.petfinder.pet.description.$t.substring(0, 100),
             image: response.data.petfinder.pet.media.photos.photo[3].$t,
+            type: response.data.petfinder.pet.animal.$t,
           };
         }
       );

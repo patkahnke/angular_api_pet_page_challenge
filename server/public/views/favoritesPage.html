@@ -2,7 +2,7 @@
   <h2>Total Favorites: {{favoriteCount}}</h2>
       <div class = "container" id="favoritesList" ng-repeat="favorite in favorites">
         <div class="col-md-3">
-          <h4>PetFinder ID: {{favorite._id}}</h4>
+          <h4>PetFinder ID: {{favorite.petFinderId}}</h4>
       </div>
       <div class="col-md-4">
         <img ng-src={{favorite.image}}></img>

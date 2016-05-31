@@ -1,6 +1,7 @@
 <div class="container" ng-controller="catsController">
   <h1 class="text-center">If you're sure you want a cat...</h1>
   <div class="col-md-6 text-center">
+    <button class="favorite" ng-click="submitFavorite()">Mark as Favorite</button>
     <h2>{{animal.name.$t}}</h2>
     <img ng-src={{photo}}></img>
     <p>{{animal.description.$t}}</p>

@@ -42,7 +42,7 @@ footer-wrapper {
 .pets-photo {
   background: url(/images/pets-photo.jpg);
   background-size: cover;
-  height: 800px;
+  height: 600px;
 }
 
 .shelter-left-fill {
