@@ -8,7 +8,8 @@
         <img ng-src={{favorite.image}}></img>
       </div>
       <div class="col-md-5">
-        <h4>Name: {{favorite.name}}</h4>
+        <h4>Name: {{favorite.name}}</h4><button class="delete" ng-click="deleteFavorite(favorite._id)">Delete this Pet</button>
         <p class="favorite-description">Description: {{favorite.description}}</p>
+
       </div>
 </div>

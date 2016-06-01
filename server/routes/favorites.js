@@ -26,17 +26,6 @@ router.post('/', function (req, res) {
   });
 });
 
-router.put('/:id', function (req, res) {
-  Favorite.findByIdAndUpdate(req.params.id, req.body, function (err, favorite) {
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-
-    res.status(204).send(favorite);
-  });
-});
-
 router.delete('/:id', function (req, res) {
   Favorite.findByIdAndRemove(req.params.id, function (err) {
     if (err) {
@@ -47,28 +36,5 @@ router.delete('/:id', function (req, res) {
     res.sendStatus(204);
   });
 });
-
-// router.put('/:id/comments', function (req, res) {
-//   var id = req.params.id;
-//   var comment = req.body; // {content: <some comment>}
-//
-//   Favorite.findById(id, function (err, favorite) {
-//     if (err) {
-//       res.sendStatus(500);
-//       return;
-//     }
-//
-//     movie.comments.push(comment);
-//
-//     movie.save(function (err) {
-//       if (err) {
-//         res.sendStatus(500);
-//         return;
-//       }
-//
-//       res.sendStatus(204);
-//     });
-//   });
-// });
 
 module.exports = router;
