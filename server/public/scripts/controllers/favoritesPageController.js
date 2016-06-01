@@ -7,9 +7,8 @@ myApp.controller('favoritesPageController', ['$scope', '$http', function ($scope
   function getFavorites() {
     $http.get('/favorites')
     .then(function (response) {
-      $scope.favorites = response.data;
+      $scope.favorites = _(response.data).sortBy('type').value();
       $scope.favoriteCount = $scope.favorites.length;
-      console.log('GET /favorites ', response.data, $scope.favorites[0]);
 
     });
   }

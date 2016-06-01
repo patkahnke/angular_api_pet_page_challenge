@@ -14,6 +14,7 @@
     "angular-route": "^1.5.5",
     "body-parser": "^1.15.1",
     "bootstrap": "^3.3.6",
+    "lodash": "^4.13.1",
     "mongo": "^0.1.0",
     "mongoose": "^4.4.19",
     "ng": "0.0.0-rc6",

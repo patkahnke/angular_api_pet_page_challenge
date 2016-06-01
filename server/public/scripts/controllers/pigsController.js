@@ -12,11 +12,8 @@ myApp.controller('pigsController', ['$scope', '$http', function ($scope, $http) 
 
       var request = baseURL + encodeURI(query) + '&callback=JSON_CALLBACK';
 
-      console.log(request);
-
       $http.jsonp(request).then(
         function (response) {
-        console.log(response.data);
         $scope.animal = response.data.petfinder.pet;
         $scope.photo = $scope.animal.media.photos.photo[3].$t;
         favorite = {
@@ -34,7 +31,6 @@ myApp.controller('pigsController', ['$scope', '$http', function ($scope, $http) 
       var data = favorite;
       $http.post('/favorites', data)
         .then(function () {
-          console.log('POST /favorites');
           getFavorites();
         });
     };

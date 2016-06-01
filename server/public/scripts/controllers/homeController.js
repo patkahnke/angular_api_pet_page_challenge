@@ -16,8 +16,6 @@ myApp.controller('homeController', ['$scope', '$http', function ($scope, $http) 
       .then(function (response) {
         $scope.favorites = response.data;
         $scope.favoriteCount = $scope.favorites.length;
-        console.log('GET /favorites ', response.data, $scope.favorites[0]);
-
       });
     }
   },
